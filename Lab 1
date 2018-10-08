@@ -1,0 +1,31 @@
+#include "pch.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+struct timeType
+{
+	int hr;
+	double min;
+	int sec;
+};
+
+struct tourType
+{
+	string cityName;
+	int distance;
+	timeType travelTime;
+};
+
+void outputData(tourType dest) {
+	cout << "city: " << dest.cityName << endl
+		<< "distance: " << dest.distance << " miles" << endl
+		<< "travel time: " << dest.travelTime.hr << ":" << dest.travelTime.min << ":" << dest.travelTime.sec << endl;
+}
+
+int main()
+{
+	tourType destination = { "Nottingham", 130, {3, 15, 0} };
+	outputData(destination);
+}
+
